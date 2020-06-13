@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Página do Gerenciador</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/questao.js"></script>
+
+</head>
+<body>
+	<h1>Escolha a sua operação</h1>
+	<select id="operacao_seleciona" onchange="selecao(this);" class="form-control">
+		<option value="">Selecione</option>
+		<option value="equipe">Cadastrar Equipe</option>
+		<option>Gerenciar Equipes</option>
+		<option value="questao">Cadastrar Questões</option>
+		<option>Gerenciar Questões</option>
+		<option value="evento">Cadastrar Evento</option>
+		<option value="info">Alterar informações</option>
+	</select>
+
+<div id="equip">
+      <h2>EQUIPE</h2>
+			<input type="text" class="form-control" name="nome" placeholder="Nome da Equipe">
+			<input type="text"  class="form-control" name="login" placeholder="Login">
+			<input type="password"  class="form-control" name="senha" placeholder="Senha">
+
+	  <h2>MEMBROS</h2>
+	        <input type="number" name="matricula" class="form-control">
+	        <input type="text" class="form-control" name="nome">
+</div>
+
+
+
+<div id="questt">
+    <h2>ESCOLHA O TIPO DA QUESTÃO</h2>
+<select id="quest_sel" onchange="selecao(this);" class="form-control">
+	<option>Selecione</option>
+	<option value="open">Questão Aberta</option>
+	<option value="multi">Questão de Multipla escolha</option>
+	<option value="vf">Questão Verdadeiro ou Falso</option>
+</select>
+</div>
+
+
+
+<div id="aberta">
+	<form id="formab" action="backend/QuestaoAbertaDAO.php" method="post">
+	<label for="texto">Titulo</label>
+	<input type="text" class="form-control" name="titulo" id="nome_q">
+	<label for="texto">Texto da Questão</label>
+	<input type="text" class="form-control" name="texto" id="texto">
+	<label for="rubrica">Rubrica da Questão</label>
+	<input type="text"  class="form-control" name="rubrica" id="rubrica">
+	<input type="submit" name="envia"  class="btn btn-primary">
+</form>
+</div>
+
+	<div id="multipla">
+	<label for="nome">Titulo da Questão</label>
+	<input type="text" class="form-control" class="form-control" name="nome" id="nome">
+	<label for="texto">Texto da Questão</label>
+	<input type="text" class="form-control" name="texto" id="texto">
+	
+<div class="form-check">
+	<label for="alternativa1" class="form-check-label">Princesa Isabel</label>
+	<input type="radio" name="alternativa1" class="form-control-sm form-check-input" id="alternativa1">
+	<select class="form-control">
+		<option>Editar dados</option>
+		<option>Apagar Alternativa</option>
+	</select>
+</div>
+
+<div class="form-check">
+	<label for="alternativa1" class="form-check-label">Princesa Isabel</label>
+	<input type="radio" name="alternativa1" class=" form-check-input " id="alternativa1">
+	<select class="form-control">
+		<option>Editar dados</option>
+		<option>Apagar Alternativa</option>
+	</select>
+</div>
+<div class="form-check">
+	<label for="alternativa1" class="form-check-label">Princesa Isabel</label>
+	<input type="radio" name="alternativa1" class=" form-check-input" id="alternativa1">
+	<select class="form-control">
+		<option>Editar dados</option>
+		<option>Apagar Alternativa</option>
+	</select>
+</div>
+<div class="form-check">
+	<label for="alternativa1" class="form-check-label">Princesa Isabel</label>
+	<input type="radio" name="alternativa1" class="form-check-input" id="alternativa1">
+	<select class="form-control">
+		<option>Editar dados</option>
+		<option>Apagar Alternativa</option>
+	</select>
+</div>
+
+	</div>
+	</div>
+
+
+
+<div id="event">
+	<h2>Evento</h2>
+	<form action="backend/Evento.php" method="post">
+	<input type="text" name="nome_evento"  class="form-control" id="nome_even" placeholder="Nome do Evento">
+	<input type="text" name="semestre" class="form-control" id="semestre" placeholder="Semestre">
+	<input type="submit" name="envia" id="ennvia" class="btn btn-primary">
+	<select class="form-control">
+		<option>Editar dados</option>
+		<option>Apagar Evento</option>
+	</select>
+</form>
+</div>
+	</form>
+	</div>
+	<div id="editt">
+		<form action="backend/alteraGerenciador.php" method="post">
+		<input type="text"  class ="form-control" name="login" placeholder="Login Antigo">
+        <input type="password" class="form-control" name="senha" placeholder="Senha Antiga">
+        <p>Novas Credenciais</p>
+        <input type="text"  class ="form-control" name="login2" placeholder="Login Novo">
+        <input type="password" class="form-control" name="senha2" placeholder="Senha Nova">
+     <input type="submit" class="btn btn-primary" name="logar">
+    </form>
+	</div>
+</body>
+</html>
